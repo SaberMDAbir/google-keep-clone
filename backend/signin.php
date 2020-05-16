@@ -31,7 +31,7 @@
   <?php
   //sign in existing user
   if($_SERVER['REQUEST_METHOD']=='POST'){
-	  if !empty($_POST['email'])&&!empty($_POST['pass'])){ //form validation
+	  if (!empty($_POST['email'])&&!empty($_POST['pass'])){ //form validation
 		require('keep_connect.php');
 		if(isset($_POST['email']) && isset($_POST['pass'])){
 		  $email = $_POST['email'];
