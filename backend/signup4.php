@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 }
 mysqli_close($dbc);
 ?>
-
-  <div class="signup-container row">
+<div class="container">
+  <div class="signup-container row justify-content-center">
     <div class="signup-form-left d-inline-block col">
       <!-- style the google logo to be smaller -->
       <img id="google-logo-small" src="../frontend/assets/google-rect-logo.svg" alt="Google Logo">
@@ -83,6 +83,7 @@ mysqli_close($dbc);
       </figure>
     </div>
   </div>
+</div>
  </body>
 
  <?php

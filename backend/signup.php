@@ -29,44 +29,45 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 }
 mysqli_close($dbc);
 ?>
-
-  <div class="signup-container row">
-    <div class="signup-form-left d-inline-block col">
-      <!-- style the google logo to be smaller -->
-      <img id="google-logo-small" src="../frontend/assets/google-rect-logo.svg" alt="Google Logo">
-        <h1 id="heading-text">Create your Google Account</h1>
-        <form class="signup-view" action="signup.php" method=POST>
-          <div class="form-group form-row">
-            <input type="text" name="firstName" class="col" placeholder="First name" aria-label="First name" autocomplete="off" spellcheck="False" autocapitalize="sentences" value="">
-            <input type="text" name="lastName" class="col" placeholder="Last name" aria-label="Last name" autocomplete="off" spellcheck="False" autocapitalize="sentences" value=""> 
-          </div>
-          <input type="text" name="username" class="username-signup-page form-control" placeholder="Username" aria-label="Username" autocomplete="off" spellcheck="False" autocapitalize="sentences" value="">
-          <div class="small-letters-signup-page" aria-live="assertive">
-            You can use letters, numbers & periods
-          </div>
-          <button type="button" class="alternative-email-button">Use my current email address instead</button>
-          <!-- After clicking the button above, there is a change in view for the button text and the input with name username. Use ::after to deal with this-->
-          <div class="form-group form-row">
-            <input type="password" class="password-input col" placeholder="Password" autocomplete="new-password" spellcheck="false" tabindex="0" aria-label="Password" name="Password" autocapitalize="off" autocorrect="off" dir="ltr" data-initial-dir="ltr" data-initial-value="">
-            <input type="password" class="password-confirm col" placeholder="Confirm" autocomplete="new-password" spellcheck="false" tabindex="0" aria-label="Confirm" name="ConfirmPasswd" autocapitalize="off" autocorrect="off" dir="ltr" data-initial-dir="ltr" data-initial-value="">
-          </div>
-          <div class="small-letters-signup-page" aria-live="assertive">
-            Use 8 or more characters with a mix of letters, numbers &amp; symbols
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-link"><a href="#">Sign in instead</a></button>
-            <button type="button" class="btn btn-primary">Next</button>
-          </div>
-        </form>
-    </div>  
-    <div class="signup-form-right d-inline-block col">
-      <figure class=security-image>
-        <img src="../frontend/assets/google-security.svg" role="presentation" class="figure-image-security">
-        <figcaption class="security-image-caption">One account. All of Google working for you.</figcaption>
-      </figure>
+    <div class="container">
+      <div class="signup-container row justify-content-center">
+        <div class="signup-form-left col">
+          <!-- style the google logo to be smaller -->
+          <img id="google-logo-small" src="../frontend/assets/google-rect-logo.svg" alt="Google Logo">
+            <h1 id="heading-text">Create your Google Account</h1>
+            <form class="signup-view" action="signup.php" method=POST>
+              <div class="form-group form-row">
+                <input type="text" name="firstName" class="col" placeholder="First name" aria-label="First name" autocomplete="off" spellcheck="False" autocapitalize="sentences" value="">
+                <input type="text" name="lastName" class="col" placeholder="Last name" aria-label="Last name" autocomplete="off" spellcheck="False" autocapitalize="sentences" value=""> 
+              </div>
+              <input type="text" name="username" class="username-signup-page form-control" placeholder="Username" aria-label="Username" autocomplete="off" spellcheck="False" autocapitalize="sentences" value="">
+              <div class="small-letters-signup-page" aria-live="assertive">
+                You can use letters, numbers & periods
+              </div>
+              <button type="button" class="alternative-email-button">Use my current email address instead</button>
+              <!-- After clicking the button above, there is a change in view for the button text and the input with name username. Use ::after to deal with this-->
+              <div class="form-group form-row">
+                <input type="password" class="password-input col" placeholder="Password" autocomplete="new-password" spellcheck="false" tabindex="0" aria-label="Password" name="Password" autocapitalize="off" autocorrect="off" dir="ltr" data-initial-dir="ltr" data-initial-value="">
+                <input type="password" class="password-confirm col" placeholder="Confirm" autocomplete="new-password" spellcheck="false" tabindex="0" aria-label="Confirm" name="ConfirmPasswd" autocapitalize="off" autocorrect="off" dir="ltr" data-initial-dir="ltr" data-initial-value="">
+              </div>
+              <div class="small-letters-signup-page" aria-live="assertive">
+                Use 8 or more characters with a mix of letters, numbers &amp; symbols
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-link"><a href="#">Sign in instead</a></button>
+                <button type="button" class="btn btn-primary">Next</button>
+              </div>
+            </form>
+        </div>  
+        <div class="signup-form-right col">
+          <figure class=security-image>
+            <img src="../frontend/assets/google-security.svg" role="presentation" class="figure-image-security">
+            <figcaption class="security-image-caption">One account. All of Google working for you.</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
-  </div>
- </body>
+  </body>
 
  <?php
 require('signup-footer.php');
