@@ -31,26 +31,31 @@
   <?php
   //sign in existing user
   if($_SERVER['REQUEST_METHOD']=='POST'){
-    require('keep_connect.php');
-    if(isset($_POST['email']) && isset($_POST['pass'])){
-      $email = $_POST['email'];
-      $password = $_POST['pass'];
-    }
+	  if !empty($_POST['email'])&&!empty($_POST['pass'])){ //form validation
+		require('keep_connect.php');
+		if(isset($_POST['email']) && isset($_POST['pass'])){
+		  $email = $_POST['email'];
+		  $password = $_POST['pass'];
+		}
 
-    require('funct.php');
-    
-    list($check, $data) = check_login($dbc, $email, $password);
-    if($check){
-      session_start();
-      $_SESSION['user_id'] = $data['user_id'];
-      $_SESSION['user_name'] = $data['user_name'];
-      redirect_user('test1.php');
-    }
-    else{
-      // right now this does not work. It doesn't check the DB properly. 
-      echo "<p>Email and password do not match those on file. Try again.<p>";
-    }
-    mysqli_close($dbc);
+		require('funct.php');
+		
+		list($check, $data) = check_login($dbc, $email, $password);
+		if($check){
+		  session_start();
+		  $_SESSION['user_id'] = $data['user_id'];
+		  $_SESSION['user_name'] = $data['user_name'];
+		  redirect_user('test1.php');
+		}
+		else{
+		  // right now this does not work. It doesn't check the DB properly. 
+		  echo "<p>Email and password do not match those on file. Try again.<p>";
+		}
+	  }else{
+		echo "Please fill out all fields";
+	  }
+	  mysqli_close($dbc);
+	  
   }
   ?>
 

@@ -18,7 +18,7 @@
 <?php
 require('keep_connect.php');
 if ($_SERVER['REQUEST_METHOD']=='POST'){
-  if (isset($_POST['newUser'])&&isset($_POST['newEmail'])&&isset($_POST['newPass'])){
+  if (!empty($_POST['newUser'])&&!empty($_POST['newEmail'])&&!empty($_POST['newPass'])){ //form validation
     $tryName=$_POST['newUser'];
     $checkUserName="select user_name from users where user_name='$tryName'";
     $run=mysqli_query($dbc,$checkUserName);
@@ -35,8 +35,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     }else{
       echo "<p id='userNameError'>This username already exists, please choose a different username.</p>";
     }
+  }else{
+	  echo "Please fill out all fields";
   }
 }
+
 mysqli_close($dbc);
  ?>
   <form class="register" action="signup.php" method="post">
