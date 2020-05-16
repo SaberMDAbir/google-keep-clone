@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     $checkUserName="select user_name from users where user_name='$tryName'";
     $run=mysqli_query($dbc,$checkUserName);
     if (mysqli_num_rows($run)==0){
-      $newUser=$_POST['newUser'];
+      $newUser = $_POST['newUser'];
       
-      $email=$_POST['newUser'] . "@gmail.com";
-      $password=$_POST['newPass'];
+      $email = $_POST['newUser'] . "@gmail.com";
+      $password = $_POST['newPass'];
 
-      $addNewUserToUsers="insert into users (user_name, email, password) values ('$newUser', '$email', sha1('$password'))";
+      $addNewUserToUsers="INSERT INTO users(user_name, email, password) VALUES ('$newUser', '$email', sha1('$password'))";
       $run=mysqli_query($dbc,$addNewUserToUsers);
       echo "<p id='userNameAccepted'>Thank you! <br /> You've registered!</p>";
       header("Refresh:3, URL=signin.php");
