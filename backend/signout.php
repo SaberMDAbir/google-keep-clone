@@ -1,13 +1,10 @@
 <?php 
-if (!isset($_COOKIE['user_id'])) {
 
 header("Refresh:3, URL=signin.php");
 	
-} else {
-	setcookie ('user_id', '', time()-3600, '/PHPSite/cookies', '', 0, 0);
-	setcookie ('first_name', '', time()-3600, '/PHPSite/cookies', '', 0, 0);
-	$_COOKIE = array();
-}
+$_SESSION = array();
+session_destroy();
+setcookie ('PHPSESSID', '', time()-3600, '/PHPSite/sessions', '', 0, 0);
 
 
 include('header.php');
