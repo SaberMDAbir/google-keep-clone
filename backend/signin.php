@@ -30,33 +30,24 @@
 
   <?php
   //sign in existing user
-  if($_SERVER['REQUEST_METHOD']=='POST'){
-	  if (!empty($_POST['email'])&&!empty($_POST['pass'])){ //form validation
-		require('keep_connect.php');
-		if(isset($_POST['email']) && isset($_POST['pass'])){
-		  $email = $_POST['email'];
-		  $password = $_POST['pass'];
-		}
+  if ($_SERVER['REQUEST_METHOD']=='POST'){
+    require('keep_connect.php');
+    require('funct.php');
+    if (isset($_POST['email'])&&isset($_POST['pass'])){
 
-		require('funct.php');
-		
-		list($check, $data) = check_login($dbc, $email, $password);
-		if($check){
-		  session_start();
-		  $_SESSION['user_id'] = $data['user_id'];
-		  $_SESSION['user_name'] = $data['user_name'];
-		  redirect_user('test1.php');
-		}
-		else{
-		  // right now this does not work. It doesn't check the DB properly. 
-		  echo "<p>Email and password do not match those on file. Try again.<p>";
-		}
-	  }else{
-		echo "Please fill out all fields";
-	  }
-	  mysqli_close($dbc);
-	  
+    list ($check, $record) = check_login($dbc, $_POST['email'], $_POST['pass']);
+
+    if ($check){
+      session_start();
+      $_SESSION['user_id']=$record['user_id'];
+      $_SESSION['user_name']=$record['user_name'];
+      redirect_user();
+    }else{
+      echo "Email and password do not match those on file.";
+    }
   }
+  mysqli_close($dbc);
+}
   ?>
 
   <form action="test1.php" method="post" class="signinForm">
