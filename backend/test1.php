@@ -22,8 +22,8 @@
         echo "<p class='nav-item' style='font-size:20px; position:absolute; top:4px; right:7em;'>".$_SESSION['user_name']."</p>";
       }
       ?>
-      <input type="submit" class="btn btn-outline-success my-2 my-sm-0 signout" value="Sign Out">
     </form>
+	<input type="submit" class="btn btn-outline-success my-2 my-sm-0 signout" value="Sign Out" onclick = "window.location=('signout.php')">
   </nav>
 
 <!-- error_reporting(E_ALL ^ E_NOTICE); -->
