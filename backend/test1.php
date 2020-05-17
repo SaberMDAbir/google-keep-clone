@@ -74,4 +74,3 @@ require('keep_connect.php');
 <?php mysqli_close($dbc); ?>
 </body>
 </html>
->>>>>>> 15a6ea3ed7ed38b04725329a01e37e24c4ac1555
