@@ -45,15 +45,15 @@ mysqli_close($dbc);
   <form class="register" action="signup.php" method="post">
   <div class="form-group">
     <label for="UserName">User name</label>
-    <input type="text" name="newUser" class="form-control" placeholder="Enter username">
+    <input type="text" name="newUser" class="form-control" placeholder="Enter username" required value="">
   </div>
   <div class="form-group">
     <label for="Email">Email address</label>
-    <input type="email" name="newEmail" class="form-control" placeholder="Enter email">
+    <input type="email" name="newEmail" class="form-control" placeholder="Enter email" required value="">
   </div>
   <div class="form-group">
     <label for="Password">Password</label>
-    <input type="password" name="newPass" class="form-control" placeholder="Enter your password">
+    <input type="password" name="newPass" class="form-control" placeholder="Enter your password" required value="">
   </div>
   <input type="submit" class="btn btn-primary userSignUp" value="Sign Up">
   </form>

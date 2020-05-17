@@ -97,3 +97,12 @@ textarea {
 		justify-content: center;
     z-index: 3;
 	}
+
+
+/* input validation */
+.form-group input:valid { 
+  outline: solid blue 2px; 
+}
+.form-group input:invalid { 
+  outline: solid red 2px; 
+}

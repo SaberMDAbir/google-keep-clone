@@ -54,11 +54,11 @@
     <p><strong>Please sign in to your account</strong></p>
     <div class="form-group">
       <label for="Email">Email address</label>
-      <input type="email" name="email" class="form-control" placeholder="Enter email address">
+      <input type="email" name="email" class="form-control" placeholder="Enter email address" required value="">
     </div>
     <div class="form-group">
       <label for="Password">Password</label>
-      <input type="password" name="pass" class="form-control" placeholder="Enter your password">
+      <input type="password" name="pass" class="form-control" placeholder="Enter your password" required value="">
     </div>
     <p id="PsigninForm">If you don't have an account, sign up below</p>
     <input type="submit" class="btn btn-primary" value="Sign In">
